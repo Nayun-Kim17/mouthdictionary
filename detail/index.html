@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>입모양 사전</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+	<meta charset="utf-8"> 
+	<style type="text/css">
+		body{
+				background-color:blue;
+				height: 100vh;
+				width: 100vw;
+				
+				margin:0;
+				padding: 0;
+				
+				align-items: center;
+				}
+		p{}
+
+		.togglebutton p {font-size: 1em;}
+		.flex{position: relative;
+			display: flex;
+			justify-content: space-between;
+			width:10vw;
+			top:2px;
+			right: 0;
+			}
+		.alien{
+				 width: 50px;
+				 height: 50px;
+				 top:50%;
+				 left:50%;
+				 z-index: 100;
+				 position: absolute;
+				 border-radius:50%;
+				 background-image: url(./mouse_alien-09.svg);
+				 background-position: center;
+				 background-repeat: no-repeat;
+				 pointer-events: none;
+				 box-sizing: border-box;
+				 transition:0.2s;
+				}
+		.toggle{
+			position:relative;
+			display: block;
+			width: 3vw;
+			height:2vh;
+			top:3vh;
+			left:90vw;
+			background-color: gray;
+			border-radius: 15px;
+			border:2px solid black;
+			z-index: 10;
+
+		}
+		.toggle:after{
+			content:'';
+			position: absolute;
+			width:2vh;
+			height: 2vh;
+			border-radius: 30px;
+			background-color: purple;
+			top:1px;
+			left:1px;
+			transiton:all 0.5s;
+		}
+  		.checkbox:checked + .toggle::after {
+        left : calc(3vw - 2vh); 
+        }
+        .checkbox:checked + .toggle {
+        background-color: green;
+    	}
+    	.checkbox { 
+        display : none;}
+        .togglebutton {width:11vw; z-index: 0;}
+
+        .sticky{position: sticky; top:0;}
+        .absolute{position: absolute;}
+        .note{top:90vh; left: 0;}
+	</style>
+<body>
+	<div class="alien"></div> 
+	<div >
+		<input type="checkbox" id="switch" class="checkbox"  />
+		<label for="switch" class="toggle">	
+		</label>
+	</div>
+	<div class="flex togglebutton" style="position: relative; top:-1vh; left:86vw;">
+		<p>독화모드</p><p>수화모드</p>
+	</div>
+	<div style="background-color: green; height: 80vh;">
+		<img src="url(./mouse_alien-09.svg)">
+		<p>제목: 내 아이를 찾아주세요.</p>
+		<p>안녕하세요. 우리는 행성 7851호에 살고 있는 외계인 가족입니다.</p>
+		<p>지구 나들이를 왔다가 우리 아이를 그만 잃어버리고 말았어요.</p>
+		<p>우리는 너무 슬퍼서 잠도 못 자고 있어요.</p>
+		<p>당신이 지구에서 제일 가는 탐정이라고 들었어요.</p>
+		<p>제발 우리 아이를 찾아 주세요!</p>
+	</div>
+	<div class="absolute note" id="note" style="top:90vh; left: 0;">
+		<h1>탐정 노트</h1>
+		<p>잃어버린 곳</p><p>북한산 등산로 입구</p>
+		<p>생김새</p><p>초록 피부, 툭 튀어나온 눈, 큰 입</p>
+		<p>성격</p><p>장난꾸러기, 부끄러움이 많다.</p>
+		<p>좋아하는 것</p><p>숨바꼭질</p>
+		<p>알게된 점</p><p>행성 7851호에 사는 외계인은 독화술을 쓴다.</p>
+		<h2>독화</h2>
+		<p>＜Lip Reading, 読話＞</p>
+		<p>입술 모양을 읽어서 상대방이 무슨 말을 하는지 알아내는 기술</p>
+		<p>입모양 뿐만 아니라 표정 등을 통해 내용을 유추한다.</p>
+	</div>
+	<div>
+		
+	</div>
+	
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  	$(document).mousemove(function(e){
+  		$('.alien').css({left:e.pageX, top:e.pageY});
+  	})
+
+
+
+
+ 
+  </script>
+</body>
+</html>
